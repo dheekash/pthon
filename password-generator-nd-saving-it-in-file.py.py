@@ -1,4 +1,5 @@
-import random #we need to import the library so that we can gerate a random password 
+import random # we need to import the library so that we can gerate a random password 
+import datetime # using datetime module to calculate the current time
 
 DIGITS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'] # list of diffrent digits available 
 
@@ -33,16 +34,24 @@ def password_genrator(password_num):                # function to generate the p
     return temp_pass # retunring the passowrd to the main program so the it can be strored in a file
 
 def main(): # main function 
+
     next = 1 # initilazing next which we use to repeat the while loop and keep on genrating passwords
+    
     password_num = 0 # number of the password genrated every time the program is executed
+
+    ct = datetime.datetime.now() # ct stores current time   
+    
     while next == 1:
             temp_pass = password_genrator(password_num) # calling the password genrator funtion
             password_num = password_num +1  
             next = int(input("Press 1 to continue generating passwords. "))
             file = open('password.txt','a') # appending the password file with the new password 
+            file.write("Current time:- ")
+            file.write(str(ct)) # writing the current time in file
+            file.write(str(" || ")) 
             file.write("Password Number ")
-            file.write(str(password_num))
-            file.write(" : ")  
+            file.write(str(password_num)) 
+            file.write(" :: ")  
             file.write(temp_pass)
             file.write("\n") # go the next line in file
             file.close()    #closing the flie once the new password is geratted  and stored in the file
