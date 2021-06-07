@@ -1,4 +1,4 @@
-import random #we need import the library so that we can gerate a random password 
+import random #we need to import the library so that we can gerate a random password 
 
 DIGITS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'] # list of diffrent digits available 
 
