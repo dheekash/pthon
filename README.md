@@ -1,1 +1,1 @@
-# pthon
+# python exercise nd project 
